@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Equipamentos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <nav>
+        <ul>
+          <li><a href="checkin.html">Check-ins</a></li>
+          <li><a href="instrutores.html">Instrutores</a></li>
+          <li><a href="equipamentos.html">Equipamentos</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section id="cadastro-equipamento">
+      <h2>Cadastrar Novo Equipamento</h2>
+      <form id="form-equipamento">
+        <div class="form-group">
+          <label for="nome-equip">Nome:</label>
+          <input type="text" id="nome-equip" name="nome-equip" required>
+        </div>
+        <div class="form-group">
+          <label for="tipo-equip">Tipo:</label>
+          <select id="tipo-equip" name="tipo-equip" required>
+            <option value="">Selecione o tipo</option>
+            <option value="Cardio">Cardio</option>
+            <option value="Musculação">Musculação</option>
+            <option value="Funcional">Funcional</option>
+            <option value="Outros">Outros</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="estado-equip">Estado:</label>
+          <select id="estado-equip" name="estado-equip" required>
+            <option value="">Selecione o estado</option>
+            <option value="Disponível">Disponível</option>
+            <option value="Em manutenção">Em manutenção</option>
+            <option value="Indisponível">Indisponível</option>
+          </select>
+        </div>
+        <div class="form-buttons">
+          <button type="submit">Cadastrar</button>
+          <button type="reset">Limpar</button>
+        </div>
+      </form>
+    </section>
+
+    <section id="equipamentos">
+      <h1>Lista de Equipamentos</h1>
+      <div class="input-group">
+        <input type="text" id="busca-equipamentos" placeholder="Buscar por nome...">
+        <button onclick="buscarEquipamentos()">Buscar</button>
+      </div>
+      <table id="equipamentos-tabela">
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Tipo</th>
+            <th>Estado</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Exemplo de dados para visualização -->
+          <tr>
+            <td>Esteira Pro 2000</td>
+            <td>Cardio</td>
+            <td>Disponível</td>
+            <td class="acoes">
+              <button class="btn-editar" onclick="editarEquipamento('1')">Editar</button>
+              <button class="btn-deletar" onclick="deletarEquipamento('1')">Deletar</button>
+            </td>
+          </tr>
+          <tr>
+            <td>Leg Press</td>
+            <td>Musculação</td>
+            <td>Em manutenção</td>
+            <td class="acoes">
+              <button class="btn-editar" onclick="editarEquipamento('2')">Editar</button>
+              <button class="btn-deletar" onclick="deletarEquipamento('2')">Deletar</button>
+            </td>
+          </tr>
+          <!-- Dados dos equipamentos serão inseridos aqui via JavaScript -->
+        </tbody>
+      </table>
+    </section>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

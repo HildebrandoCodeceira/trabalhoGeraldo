@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Check-ins</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <nav>
+        <ul>
+          <li><a href="checkin.html">Check-ins</a></li>
+          <li><a href="instrutores.html">Instrutores</a></li>
+          <li><a href="equipamentos.html">Equipamentos</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section id="cadastro-checkin">
+      <h2>Cadastrar Novo Check-in</h2>
+      <form id="form-checkin">
+        <div class="form-group">
+          <label for="matricula">Matrícula:</label>
+          <input type="text" id="matricula" name="matricula" required>
+        </div>
+        <div class="form-group">
+          <label for="entrada">Hora de Entrada:</label>
+          <input type="time" id="entrada" name="entrada" required>
+        </div>
+        <div class="form-group">
+          <label for="saida">Hora de Saída:</label>
+          <input type="time" id="saida" name="saida">
+        </div>
+        <div class="form-buttons">
+          <button type="submit">Cadastrar</button>
+          <button type="reset">Limpar</button>
+        </div>
+      </form>
+    </section>
+
+    <section id="checkin">
+      <h1>Check-ins Registrados</h1>
+      <div class="input-group">
+        <input type="text" id="busca-checkin" placeholder="Buscar por matrícula...">
+        <button onclick="buscarCheckin()">Buscar</button>
+      </div>
+      <table id="checkin-tabela">
+        <thead>
+          <tr>
+            <th>Matrícula</th>
+            <th>Hora de Entrada</th>
+            <th>Hora de Saída</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Exemplo de dados para visualização -->
+          <tr>
+            <td>12345</td>
+            <td>08:30</td>
+            <td>10:15</td>
+            <td class="acoes">
+              <button class="btn-editar" onclick="editarCheckin('12345')">Editar</button>
+              <button class="btn-deletar" onclick="deletarCheckin('12345')">Deletar</button>
+            </td>
+          </tr>
+          <tr>
+            <td>67890</td>
+            <td>14:00</td>
+            <td>16:30</td>
+            <td class="acoes">
+              <button class="btn-editar" onclick="editarCheckin('67890')">Editar</button>
+              <button class="btn-deletar" onclick="deletarCheckin('67890')">Deletar</button>
+            </td>
+          </tr>
+          <!-- Dados dos check-ins serão inseridos aqui via JavaScript -->
+        </tbody>
+      </table>
+    </section>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
